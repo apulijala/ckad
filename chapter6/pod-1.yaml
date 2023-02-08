@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  annotations:
+    deployer: "Arvind K. Pulijala"
+  labels:
+    tier: frontend
+    team: artemidis
+  name: pod-1
+spec:
+  containers:
+  - image: nginx
+    name: pod-1

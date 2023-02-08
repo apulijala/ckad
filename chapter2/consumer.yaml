@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: consumer
+  name: consumer
+spec:
+  serviceAccountName: monitoring
+  containers:
+  - image: nginx
+    name: consumer
+    envFrom:
+    - configMapRef:
+        name: ext-service-configmap
+  volumes: 
+    - name: consumer-secret
+      secret: 
+        secretName: ext-service-secret
